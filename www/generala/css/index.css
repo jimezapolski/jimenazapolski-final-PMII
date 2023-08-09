@@ -1,0 +1,324 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    margin: 0 auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+   
+    background: rgb(1,119,78);
+    background: linear-gradient(90deg, rgba(1,119,78,1) 0%, rgba(3,72,28,1) 50%, rgba(1,102,64,1) 99%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:16px;
+    height:100vh;
+    padding:1em;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    text-transform:uppercase;
+}
+
+/* Portrait layout (default) */
+.app {
+    margin-top: 3em;
+    text-align:center;
+    /*padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+  /*  margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */                               /* offset horizontal: half of text area width */
+}
+
+
+#container{
+  display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.1em 0;
+    height: 92vh;
+}
+#izq {
+    width: 35%;
+}
+/*
+#juego{
+    width:80%;
+}*/
+
+#dices{
+    align-items: center;
+    margin-left: -8em;
+}
+#moves{
+    margin-left: -10em;
+}
+#dados{
+    margin: 1em;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#scores
+{
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20PX);
+    border: solid 1px #4B946A;
+    color: rgba(255, 255, 255, 0.753);
+}
+
+th.current
+{
+    background-color: white;
+    color: black;
+}
+
+.btn-close a{
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+#dlg {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 24%;
+    background-color: rgba(106, 90, 205, 0.92);
+    color: white;
+    font-size: 1.2em;
+    padding: 30px 0px;
+    z-index: 1000;
+    border-radius: 10px;
+ 
+}
+
+#dlg.inf .header .body
+{
+    background-color:rgba(106, 90, 205, 0.92);
+    color: white;
+}
+
+#dlg.wrn .header .body
+{
+    background-color: rgba(106, 90, 205, 0.92);
+    color: black;
+}
+
+#dlg.err .header .body
+{
+    background-color: rgba(106, 90, 205, 0.92);
+    color: white;
+}
+
+.cerrar 
+{
+    color: rgba(255, 255, 255, 0.56);
+    cursor: pointer;
+}
+
+#button-yes{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    margin: 0 auto; 
+    /*position:absolute;*/
+    top: 70%; 
+    left: 20%;
+    border-color: #C98B16;
+    color:#FFFFFF;
+    /*background-color: #C98B16;*/
+    border-radius: 5px;
+}
+
+#button-no{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    margin: 0 auto; 
+    /*position:absolute;*/
+    top: 70%; 
+    left: 65%;
+    border-color: #C98B16;
+    color:#FFFFFF;
+    background-color: #C98B16;
+    border-radius: 5px;
+}
+
+.nodisp
+{
+    display:none !important;
+}
+table, tr, td
+{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    margin: 0 auto;
+   
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+    cursor:pointer;
+}
+
+/*table{
+   
+    margin-top: 0.6em;
+    width: 30%;
+    height: 60vh;
+}*/
+
+.tabla-puntos 
+{
+  
+    margin: 0 auto;
+    width: 55%;
+    /* height: 30%; */
+    
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+    
+    z-index: 1000;
+    margin-left: 8em;
+    margin-top: -8em;
+}
+
+.tabla-puntos tr th, .tabla-puntos tr td{
+    min-width: 2em;
+} 
+canvas{
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+.sel 
+{
+    border-radius: 20px;
+    border: 2px solid red;
+}
+
+button{
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20PX);
+    border: solid 1px #4B946A;
+    color: rgba(255, 255, 255, 0.753);
+    font-size: 1em;
+    text-align: center;
+    border-radius: 0.6em;
+    padding: 0.8em;
+    margin: 0.2em;
+}
+
+/* Landscape layout (with min-width) */
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    /*.app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+       /* margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+  /*  }*/
+  #container{
+    margin-top: 0.5em!important;
+    margin-left: 2em !important;
+  }
+    #dices{
+        margin-left: -2em;
+    }
+    #moves{
+        margin-left: -14em !important;
+    }
+    #scores{
+        margin: 0 auto;
+        width: 100% !important;
+
+    }
+    #izq
+    {
+        margin-left: 1em!important;
+        width: 50%!important;
+        
+    }
+    .tabla-puntos
+    { 
+        width: 55%;
+        margin-top: -6.5em !important;
+        margin-left: 26em !important;
+        font-size: 0.95em !important;
+    }
+    #btn-roll{
+      
+        margin-top: -8em!important;
+        /* margin-right: 12em; */
+        margin-left: -10.5em!important;
+        margin-bottom: 0 !important;
+        }
+
+ 
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    
+}
+
+.event {
+    border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+#deviceready.ready .event.listening { display: none; }
+#deviceready.ready .event.received { display: block; }
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
+    }
+}

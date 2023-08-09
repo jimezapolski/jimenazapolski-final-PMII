@@ -1,0 +1,349 @@
+/* Estilos generales */
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+ * {
+    margin: 0 auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+   
+    background: rgb(1,119,78);
+    background: linear-gradient(90deg, rgba(1,119,78,1) 0%, rgba(3,72,28,1) 50%, rgba(1,102,64,1) 99%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:16px;
+    height:100vh;
+    padding:1em;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    text-transform:uppercase;
+}
+
+/* Portrait layout (default) */
+.app {
+    margin-top: 0;
+    text-align:center;
+    /*padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+  /*  margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */                               /* offset horizontal: half of text area width */
+}
+
+  
+  h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0;
+    overflow:visible;
+    padding:0;
+    text-align:center;
+    
+}
+canvas{
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+.sel 
+{
+    border-radius: 20px;
+    border: 2px solid red;
+}
+
+  
+  .app {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  
+  .tabla-puntos {
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    cursor:pointer;
+  }
+  
+  .tabla-puntos td,
+  .tabla-puntos th {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  
+  .tabla-puntos th {
+
+    font-weight: bold;
+  }
+
+  #scores
+{
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20PX);
+    border: solid 1px #4B946A;
+    color: rgba(255, 255, 255, 0.753);
+}
+  
+
+#dlg {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 24%;
+    background-color: rgba(106, 90, 205, 0.92);
+    color: white;
+    font-size: 1.2em;
+    padding: 30px 0px;
+    z-index: 1000;
+    border-radius: 10px;
+ 
+}
+
+#dlg.inf .header .body
+{
+    background-color:rgba(106, 90, 205, 0.92);
+    color: white;
+}
+
+#dlg.wrn .header .body
+{
+    background-color: rgba(106, 90, 205, 0.92);
+    color: black;
+}
+
+#dlg.err .header .body
+{
+    background-color: rgba(106, 90, 205, 0.92);
+    color: white;
+}
+
+.cerrar 
+{
+    color: rgba(255, 255, 255, 0.56);
+    cursor: pointer;
+}
+
+#button-yes{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    margin: 1em; 
+    top: 70%; 
+    left: 20%;
+    background-color: #57d63e;
+    color:#FFFFFF;
+    border-radius: 5px;
+}
+
+#button-no{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    margin: 1em; 
+    /*position:absolute;*/
+    top: 70%; 
+    left: 65%;
+    border-color: #d12828;
+    color:#FFFFFF;
+    border-radius: 5px;
+}
+
+
+.nodisp
+{
+    display:none !important;
+}
+  /* Estilos para pantallas pequeñas */
+  
+  @media (max-width: 768px) {
+    button{
+        background-color:rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20PX);
+        border: solid 1px #4B946A;
+        color: rgba(255, 255, 255, 0.753);
+        font-size: 0.8em;
+        text-align: center;
+        border-radius: 0.6em;
+        padding: 0.8em;
+        margin: 0.2em;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #moves {
+      margin: 0;
+      text-align: center;
+    }
+  
+    .dados {
+      margin: 12px 0;
+    }
+  
+    #scores {
+      margin-top: 12px;
+    }
+  
+
+  
+  }
+
+  @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    /* Estilos generales */
+    * {
+      margin: 0 auto;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+  
+    body {
+      -webkit-touch-callout: none;
+      -webkit-text-size-adjust: none;
+      -webkit-user-select: none;
+      background: rgb(1, 119, 78);
+      background: linear-gradient(
+        90deg,
+        rgba(1, 119, 78, 1) 0%,
+        rgba(3, 72, 28, 1) 50%,
+        rgba(1, 102, 64, 1) 99%
+      );
+      font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI", "Roboto", sans-serif;
+      font-size: 4vmin;
+      height: 100vmin;
+      padding: 1vmin;
+      /* Padding to avoid the "unsafe" areas behind notches in the screen */
+      padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px)
+        env(safe-area-inset-left, 0px);
+      text-transform: uppercase;
+    }
+  
+    /* Portrait layout (default) */
+    .app {
+      margin-top: 0;
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 3vmin;
+      font-weight: normal;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      text-align: center;
+    }
+
+  
+    .app {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vmin;
+    }
+  
+    .tabla-puntos {
+      margin: 0;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 60vmin;
+      color: white;
+      text-align: center;
+      font-size: 2vmin;
+      cursor: pointer;
+    }
+  
+    .tabla-puntos td,
+    .tabla-puntos th {
+      padding: 0.8vmin;
+      text-align: center;
+      border: 0.2vmin solid #fff;
+      color: #fff;
+    }
+  
+ 
+  
+  
+    #dlg {
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        width: 50%;
+        height: 24%;
+        background-color: rgba(106, 90, 205, 0.92);
+        color: white;
+        font-size: 1.2em;
+        padding: 30px 0px;
+        z-index: 1000;
+        border-radius: 10px;
+      }
+    
+}  
+  
+.event {
+    border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+#deviceready.ready .event.listening { display: none; }
+#deviceready.ready .event.received { display: block; }
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
+    }
+}

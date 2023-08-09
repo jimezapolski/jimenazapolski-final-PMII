@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Raleway:wght@400;500;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/generala.css">
+        <link href="../css/index.css" rel="stylesheet"> <!--aca estoy cargando el general-->
+        <title>GENERALA</title>
+    </head>
+    <body>
+            <div class="app">
+                
+                
+                <div id="container">
+                    <h1>Generala</h1>
+                    <button id= "btn-roll" onclick="rollDices();">Tirar los dados</button>
+                    <div id="izq">
+                        <!--<a id="volver" href="../index.html">volver</a>-->
+                        <div id="moves">
+                            <h2>Jugadas restantes: <span></span></h2>
+                        </div>
+                        <div>
+                            <div id="dices" class="dados"></div>
+                        </div>
+                    
+                        <table id="scores" class="tabla-puntos">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+            
+
+                </div>
+                <div id="dlg" class="nodisp"> <!--diálogo que empieza oculto (nodisp)-->
+                    <div class="header">
+                        <div class="title"></div>
+                        <div class="btn-close"></div>
+                        <a href="javascript:closeDlg();"></a>
+                    </div> <!--botón para cerrar-->
+                
+                        <div class="body"></div>
+                </div>
+                
+                
+        </div>
+        <!-- NAV BAR DE LA APP-->
+        <div id="nav-bar">
+            <ul>
+                <li><a href="../index.html"><img class ="icon" src="../img/home.svg" alt="icono pagina principal"></a></li>
+                <li><a href="../puntajes.html"><img class ="icon" src="../img/score.svg" alt="icono pagina puntajes"></a></li>
+                <li><a href="../perfiles.html"><img class ="icon" src="../img/profile.svg" alt="icono pagina perfil"></a></li>
+            </ul>
+        </div>
+            <script src="../cordova.js"></script>
+            <script src="../js/jslib.js"></script>
+            <script src="../js/app.js"></script>
+            <script src="js/generala.js"></script>
+            <script src="js/index.js"></script>
+    </body>
+</html>

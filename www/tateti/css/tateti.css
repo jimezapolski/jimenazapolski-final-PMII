@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    background: rgb(1,119,78);
+    background: linear-gradient(90deg, rgba(1,119,78,1) 0%, rgba(3,72,28,1) 50%, rgba(1,102,64,1) 99%);
+}
+
+h1{
+
+    text-transform: uppercase;
+
+}
+h2{
+    font-size: 1.2em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.637);
+}
+h3 {
+    font-size: 2em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.842);
+    position: absolute;
+    top: 12em; 
+    z-index: 1;
+    width: 100%;
+}
+span{
+    color: white;
+}
+
+table
+{
+
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20PX);
+    border: solid 1px rgb(1,119,78);
+    color: rgba(255, 255, 255, 0.753);
+    margin: 0 auto;
+    padding: 0.6em;
+}
+
+td,
+tr
+{   border: solid 1px rgb(1,119,78);
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    height: 110px;
+	width: 110px;
+ 
+}
+
+
+tr, td:nth-child(even)
+{
+     background-color: rgba(255, 255, 255, 0.3);
+}
+
+#cartel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 33vh;
+    z-index: 1000;
+
+}
+
+.nodisp {
+    display: none;
+}
+
+
+/* Landscape layout (with min-width) */
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+    table {
+        margin-top: 0!important;
+        padding: 0.1em;
+       margin-bottom: 1em !important;
+    }
+    td,tr {
+        font-size: 1em;
+        width: 5em !important;
+        height: 5em !important;
+    }
+    #cartel {
+        width: 65%;
+
+    }
+    #mensaje {
+        font-size: 1em;
+        padding-top: 1em !important;
+    }
+    button {
+        margin-top: 1em !important;
+    }
+    span{
+       font-size: 1em;
+    }
+    
+
+}

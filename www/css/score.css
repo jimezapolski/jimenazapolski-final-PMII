@@ -1,0 +1,30 @@
+
+#scores
+{
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20PX);
+    border: solid 1px #4B946A;
+    color: rgba(255, 255, 255, 0.753);
+}
+
+
+
+
+table, table td{
+    margin: 0 auto;
+    border:0;
+    border: 1px solid;
+    border-collapse: collapse;
+    cursor:pointer;
+    padding: 2em;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+table{
+    margin-top:0.8em;
+    width: 100%;
+    margin-top: 0.8em;
+    width: 30%;
+    height: 60vh;
+}
